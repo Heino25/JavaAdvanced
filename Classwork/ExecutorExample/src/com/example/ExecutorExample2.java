@@ -14,7 +14,7 @@ public class ExecutorExample2 {
     Future<String> f2 = es.submit(new ExampleCallable("two", 10000));
 
     try {
-      es.awaitTermination(5, TimeUnit.SECONDS);
+      es.awaitTermination(2, TimeUnit.SECONDS);
       es.shutdown();
       String result1 = f1.get();
       System.out.println("Result of one: " + result1);
