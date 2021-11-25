@@ -1,24 +1,26 @@
 package com.example.javafxapplication;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class Main extends Application {
+
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sample.fxml"));
-        setUserAgentStylesheet(STYLESHEET_CASPIAN);
-        Scene scene = new Scene(fxmlLoader.load(), 600, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+//        setUserAgentStylesheet(STYLESHEET_CASPIAN);
+
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 600, 275));
+        primaryStage.show();
     }
 
+
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
